@@ -1,0 +1,72 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import AboutMe from "@/components/AboutMe.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import Experience from "@/components/Experience.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Hero from "@/components/Hero.astro"
+import TitleSection from "@/components/TitleSection.astro"
+import Contact from "@/components/Contact.astro"
+import Phone from "@/components/icons/Phone.astro"
+import Code from "@/components/icons/Code.astro"
+import Skills from "@/components/Skills.astro"
+---
+
+<Layout
+  title="Porfolio de Miquel Roca"
+  description="Contrata a Miquel Roca para tu empresa. Desarrollador Web recién graduado en Desarrollo de Aplicaciones Web."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-24">
+      <Hero>
+        </slot>
+      </Hero>
+    </SectionContainer>
+    <div class="space-y-16">
+
+      <SectionContainer id="contacto">
+        <TitleSection>
+          <Phone class="size-8" />
+          Contacto
+        </TitleSection>
+        <Contact />
+      </SectionContainer>
+
+      <SectionContainer id="experiencia">
+        <TitleSection>
+          <Briefcase class="size-8" />
+          Experiencia laboral
+        </TitleSection>
+        <Experience />
+      </SectionContainer>
+
+      <SectionContainer id="proyectos">
+        <TitleSection>
+          <CodeIcon class="size-7" />
+          Proyectos
+        </TitleSection>
+        <Projects />
+      </SectionContainer>
+
+      <SectionContainer id="habilidades">
+        <TitleSection>
+          <CodeIcon class="size-7" />
+          Habilidades
+        </TitleSection>
+        <Skills />
+      </SectionContainer>
+
+      <SectionContainer id="sobre-mi">
+        <TitleSection>
+          <Code class="size-8" />
+          Sobre mí
+        </TitleSection>
+        <AboutMe />
+      </SectionContainer>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,22 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Marzo 2024 - Julio 2024",
+    title: "Prácticas Desarrollador Web",
+    company: "Soluciones Abiertas SL",
+    description:
+      "Desarrollo plugins para WordPress, diseño y migración de frameworks de la página web principal de la empresa, creando soluciones personalizadas y optimizando la experiencia del usuario en cada sección.",
+  }
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

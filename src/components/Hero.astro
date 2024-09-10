@@ -1,0 +1,34 @@
+---
+const personalImageAlt = "Miguel Ángel"
+import Badge from "@/components/Badge.astro"
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg w-32 y-24"
+      src="/roca.png"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/miquel-roca-mascaros/"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    ¡Hola!, soy Roca
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    Recién graduado en <strong
+      >Desarrollo de Aplicaciones Web</strong
+    > en Xátiva, Valencia 🇪🇸. Programador FullStack que le gusta trabajar con el backend y el frontend por igual.
+  </p>
+</div>

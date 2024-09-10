@@ -1,0 +1,60 @@
+---
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import MailIcon from "@/components/icons/Mail.astro"
+import SocialPill from "@/components/SocialPill.astro"
+import Copy from "./icons/Copy.astro"
+import GitHub from "./icons/GitHub.astro"
+import IconPdf from "./icons/IconPdf.astro"
+---
+
+<nav class="flex flex-col gap-y-6 mt-4 w-[70%]">
+    <div class="flex gap-x-3">
+        <div class="w-full border bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded-lg flex items-center px-4">
+            <p id="copy" class="text-sm text-gray-800 dark:text-gray-300">miquel1818@gmail.com</p>
+        </div>
+        <SocialPill href="mailto:miquel1818@gmail.com">
+            <MailIcon class="w-4" />
+        </SocialPill>
+        <SocialPill  id="copyButton">
+            <Copy class="w-4" />
+        </SocialPill>
+    </div>    
+    <div class="flex flex-wrap gap-x-3 justify-between">
+        <SocialPill href="https://linkedin.com/in/miquel-roca-mascaros/">
+            <LinkedInIcon class="size-4" />
+            LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/MiquelRoca18">
+            <GitHub class="size-4" />
+            Github
+        </SocialPill>
+        <SocialPill href="/curriculum.pdf" download="cvMiquelRoca.pdf">
+            <IconPdf class="size-4" />
+            CV
+        </SocialPill>
+    </div>
+</nav>
+
+<script>
+    // Obteniendo el botón y el texto de forma segura
+    const copyButton = document.getElementById('copyButton')!;
+    const copyText = document.getElementById('copy')!;
+
+    // Función para copiar texto al portapapeles
+    copyButton.addEventListener('click', function (ev) {
+        ev.preventDefault(); // Evitar comportamiento por defecto del enlace
+
+        // Obtener el texto y asegurar que sea string (sin null)
+        const textToCopy = copyText.textContent || ''; // Si es null, será una cadena vacía.
+
+        // Usar la API de portapapeles moderna
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                console.log('Texto copiado al portapapeles: ', textToCopy);
+                // Aquí puedes mostrar una notificación o hacer algo adicional
+            })
+            .catch(err => {
+                console.error('Error al copiar el texto: ', err);
+            });
+    });
+</script>
